@@ -33,7 +33,8 @@ class CollectionViewCell<View: UIView, ViewModel where View: HasModel, View.Mode
         fatalError("init(coder:) has not been implemented")
     }
 
-    var model: ViewModel {
+    // The final here is necessary and it's related to this https://developer.apple.com/swift/blog/?id=27
+    final var model: ViewModel {
         get {
             return customView.model
         }
